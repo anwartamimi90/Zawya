@@ -1,8 +1,8 @@
 app_name = "arc"
-app_title = "Arc"
+app_title = "ARC"
 app_publisher = "ARD"
-app_description = "ARC"
-app_email = "arc@ard.com"
+app_description = "arc ard"
+app_email = "ar@g.com"
 app_license = "MIT"
 
 # Includes in <head>

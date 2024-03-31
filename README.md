@@ -1,7 +1,7 @@
-## Arc
+## ARC
 
-ARC
+arc ard
 
 #### License
 
-MIT# Zawya
+MIT
