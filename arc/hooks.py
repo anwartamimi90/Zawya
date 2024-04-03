@@ -213,3 +213,5 @@ app_license = "MIT"
 # auth_hooks = [
 # 	"arc.auth.validate"
 # ]
+
+fixtures=[{"dt":"Translation"}]
