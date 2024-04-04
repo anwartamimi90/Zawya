@@ -217,4 +217,25 @@ doc_events = {
 # 	"arc.auth.validate"
 # ]
 
-fixtures=[{"dt":"Translation"}]
+fixtures=[{"dt":"Translation"},
+          
+          {"dt":"Salary Structure",
+           "filters":[
+                ["name","in",[
+                  "هيكلية رواتب",
+            ]]
+		   ]},
+           
+		   {"dt": "Salary Component"
+			,"filters": [
+				["name","in",[
+					"Field Bonus",
+						"Various Allowances",
+						"Absence Discount",
+						"Warranty Discount",
+						"Advance Discount",
+						"Leave Encashment",
+				]]
+			]},       
+        
+			] ## end of fixtures
