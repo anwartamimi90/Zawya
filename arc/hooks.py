@@ -236,6 +236,15 @@ fixtures=[{"dt":"Translation"},
 						"Advance Discount",
 						"Leave Encashment",
 				]]
-			]},       
-        
+			]},   
+
+			{
+			"dt": "Supplier Group"
+			,"filters": [
+				["name","in",[
+					"Manufacturer",
+				]]
+			],
+			},    
+			
 			] ## end of fixtures
