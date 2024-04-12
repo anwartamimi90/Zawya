@@ -1,3 +1,4 @@
+import frappe
 from datetime import datetime
 
 def get_months_diff(date1, date2):
@@ -9,6 +10,24 @@ def calculate_number_of_months(doc, method):
     today = datetime.now()
     first_experience = datetime.strptime(first_experience_str, "%Y-%m-%d")  # Assuming the format is YYYY-MM-DD
     diff_in_months = get_months_diff(today, first_experience)
-    print("Difference in months:", diff_in_months)
+    # print("\n\n\n\n")
+    # print("Difference in months:", diff_in_months)
     doc.custom_experience_in_months = diff_in_months
+    frappe.db.commit()
 
+
+# Get all employees and insert new employee
+def get_and_insert_employee(doc, method):
+
+    #Get Employees
+    emp = frappe.db.sql("""
+        SELECT name FROM `tabEmployee` WHERE gender = 'Female' || gender = 'Male'""", as_dict=1)
+    
+    #Insert Employee
+    # new_emp = frappe.db.sql("""
+    #     INSERT INTO tabEmployee (first_name, gender, date_of_birth, date_of_joining,
+    #                         status, company, name) VALUES ('Mahmoud', 'Male', '2001-1-2',
+    #                         '2024-04-03', 'Active', 'S', 'HR-EMP-00003');""", as_dict=1)
+    
+    # print("\n\n")
+    # print(emp)

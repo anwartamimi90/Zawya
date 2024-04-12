@@ -118,14 +118,12 @@ doctype_js = {"Employee" : "public/js/employee.js"}
 
 doc_events = {
     "Employee": {
-        "validate": "arc.overrides.override_employee.calculate_number_of_months"
-    }
-	# "*": {
-	# 	"on_update": "method",
-	# 	"on_cancel": "method",
-	# 	"on_trash": "method"
-	# }
-}
+        "validate": [
+            "arc.overrides.override_employee.get_and_insert_employee",
+            "arc.overrides.override_employee.calculate_number_of_months"
+        ]
+    }}
+
 
 # Scheduled Tasks
 # ---------------
