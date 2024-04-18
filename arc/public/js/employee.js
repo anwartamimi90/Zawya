@@ -26,3 +26,26 @@ frappe.ui.form.on('Employee External Work History', {
 	},
 
 });
+
+
+frappe.ui.form.on('Employee', {
+    custom_first_experience_date: function(frm) {
+        let employee = frm.doc; 
+
+        if (employee.custom_first_experience_date) {
+            let firstExperienceDate = new Date(employee.custom_first_experience_date);
+            let today = new Date();
+
+            let date1_year = firstExperienceDate.getFullYear();
+            let date2_year = today.getFullYear();
+            let date1_month = firstExperienceDate.getMonth();
+            let date2_month = today.getMonth();
+
+            let diff_in_months = (date2_year - date1_year) * 12 + (date2_month - date1_month);
+
+            console.log(diff_in_months);
+
+            frm.set_value('custom_experience_in_months', diff_in_months);
+        }
+    }
+});
