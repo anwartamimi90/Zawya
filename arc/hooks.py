@@ -108,9 +108,9 @@ doctype_js = {"Employee" : "public/js/employee.js"}
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Employee Transfer": "arc.overrides.override_employee_transfer.CustomEmployeeTransfer"
+}
 
 # Document Events
 # ---------------
@@ -119,32 +119,23 @@ doctype_js = {"Employee" : "public/js/employee.js"}
 doc_events = {
     "Employee": {
         "validate": [
-            "arc.overrides.override_employee.get_and_insert_employee",
-            "arc.overrides.override_employee.calculate_number_of_months"
-        ]
+            "arc.overrides.override_employee.get_and_insert_employee", 
+            # "arc.overrides.override_employee.calculate_number_of_months",
+        ],
     }}
 
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"arc.tasks.all"
-# 	],
-# 	"daily": [
-# 		"arc.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"arc.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"arc.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"arc.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+    
+	"cron": {
+		"0/15 * * * *": [
+			"arc.tasks.cron",
+		],	
+	}	
+}
 
 # Testing
 # -------
