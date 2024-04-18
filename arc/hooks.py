@@ -236,5 +236,8 @@ fixtures=[{"dt":"Translation"},
 				]]
 			],
 			},    
-			
+
+			{
+                "dt": "Property Setter"
+			},			
 			] ## end of fixtures
