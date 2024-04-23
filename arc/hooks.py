@@ -208,6 +208,13 @@ scheduler_events = {
 # ]
 
 fixtures=[{"dt":"Translation"},
+          {"dt":"Letter Head",
+           "filters":[
+                ["name","in",[
+                  "Company Letter Head",
+            	]]
+		   ]
+           },
           
           {"dt":"Salary Structure",
            "filters":[
